@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drag and Drop Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Content/WebSharper.DragDrop.Sample.css" />
+    <style>
+        /* Don't show the not-yet-loaded templates */
+        [ws-template], [ws-children-template] { display: none; }
+        #dragBox {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+
+        #dropZone {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .drop-element {
+            background-color: lightgreen;
+        }
+    </style>
+    <script type="module" src="Content/WebSharper.DragDrop.Sample.head.js"></script>
+</head>
+<body>
+    <h1>Drag and Drop Example</h1>
+    <div id="main" ws-children-template="Main">
+        <div ws-onafterrender="BoxInit">
+            <div id="dragBox" draggable="true">Drag Me</div>
+            <div id="dropZone">Drop Here</div>
+        </div>
+    </div>
+    <script type="module" src="Content/WebSharper.DragDrop.Sample.min.js"></script>
+</body>
+</html>
