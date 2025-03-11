@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.DragDrop", "WebSharper.DragDrop\WebSharper.DragDrop.fsproj", "{8A68E1CE-0029-475B-9049-0E40072BD488}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSharper.DragDrop.Sample", "WebSharper.DragDrop.Sample\WebSharper.DragDrop.Sample.fsproj", "{BEBB3E8A-9CA1-4652-AD88-6CB8B02383AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A68E1CE-0029-475B-9049-0E40072BD488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A68E1CE-0029-475B-9049-0E40072BD488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A68E1CE-0029-475B-9049-0E40072BD488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A68E1CE-0029-475B-9049-0E40072BD488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEBB3E8A-9CA1-4652-AD88-6CB8B02383AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEBB3E8A-9CA1-4652-AD88-6CB8B02383AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEBB3E8A-9CA1-4652-AD88-6CB8B02383AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEBB3E8A-9CA1-4652-AD88-6CB8B02383AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7BCF7A9-6E8A-4285-A44B-B2098156A1EA}
+	EndGlobalSection
+EndGlobal
