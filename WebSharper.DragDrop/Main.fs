@@ -88,49 +88,9 @@ module Definition =
             "dataTransfer" =? DataTransfer
         ]
 
-    let HTMLElement = 
-        Class "HTMLElement" 
-        |+> Instance [
-            "ondrag" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDrag instead"
-            "ondrag" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDrag"
-
-            "ondragend" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDragEnd instead"
-            "ondragend" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDragEnd"
-
-            "ondragenter" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDragEnter instead"
-            "ondragenter" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDragEnter"
-
-            "ondragleave" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDragLeave instead"
-            "ondragleave" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDragLeave"
-
-            "ondragover" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDragOver instead"
-            "ondragover" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDragOver"
-
-            "ondragstart" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDragStart instead"
-            "ondragstart" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDragStart"
-
-            "ondrop" =@ T<unit> ^-> T<unit>
-            |> ObsoleteWithMessage "Use OnDrop instead"
-            "ondrop" =@ DragEvent ^-> T<unit>
-            |> WithSourceName "OnDrop"
-        ]
-
     let Assembly =
         Assembly [
             Namespace "WebSharper.DragDrop" [
-                HTMLElement
                 DragEvent
                 DragEventInit
                 DataTransfer
