@@ -13,36 +13,40 @@ module Client =
     // and refresh your browser, no need to recompile unless you add or remove holes.
     type IndexTemplate = Template<"wwwroot/index.html", ClientLoad.FromDocument>
 
-    let setupDragAndDrop () =
-        let dragBox = JS.Document.GetElementById("dragBox")
-        let dropZone = JS.Document.GetElementById("dropZone")
-
-        // Drag Start: Set data to transfer
-        dragBox.AddEventListener("dragstart", fun (event: Dom.Event) ->
-            let dragEvent = event |> As<DragEvent>
-            dragEvent.DataTransfer.SetData("text/plain", "Dropped!")
-        )
-
-        // Allow dropping by preventing default behavior
-        dropZone.AddEventListener("dragover", fun (event: Dom.Event) ->
-            event.PreventDefault()
-        )
-
-        // Handle drop event
-        dropZone.AddEventListener("drop", fun (event: Dom.Event) ->
-            event.PreventDefault()
-            let dragEvent = event |> As<DragEvent>
-            let data = dragEvent.DataTransfer.GetData("text/plain")
-            dropZone.TextContent <- data
-            dropZone.ClassList.Add("drop-element")
-        )
-
     [<SPAEntryPoint>]
     let Main () =
+        let dropText = Var.Create "Drop Here"
+        let isDropped = Var.Create false
+
+        // Attach the dragstart handler without reaching for the DOM directly.
+        let dragBoxAttrs =
+            Attr.OnAfterRender(fun el ->
+                el.AddEventListener("dragstart", fun (event: Dom.Event) ->
+                    let dragEvent = event |> As<DragEvent>
+                    dragEvent.DataTransfer.SetData("text/plain", "Dropped!")
+                )
+            )
+
+        // Allow dropping, and react to the drop with WebSharper.UI Vars.
+        let dropZoneAttrs =
+            Attr.Append
+                (Attr.OnAfterRender(fun el ->
+                    el.AddEventListener("dragover", fun (event: Dom.Event) ->
+                        event.PreventDefault()
+                    )
+                    el.AddEventListener("drop", fun (event: Dom.Event) ->
+                        event.PreventDefault()
+                        let dragEvent = event |> As<DragEvent>
+                        let data = dragEvent.DataTransfer.GetData("text/plain")
+                        dropText.Value <- data
+                        isDropped.Value <- true
+                    )
+                ))
+                (Attr.DynamicClassPred "drop-element" isDropped.View)
 
         IndexTemplate.Main()
-            .BoxInit(fun () -> 
-                setupDragAndDrop()
-            )
+            .DragBoxAttrs(dragBoxAttrs)
+            .DropZoneAttrs(dropZoneAttrs)
+            .DropText(Doc.TextView(dropText.View))
             .Doc()
         |> Doc.RunById "main"

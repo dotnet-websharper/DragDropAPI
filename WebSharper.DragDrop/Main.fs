@@ -74,7 +74,7 @@ module Definition =
         Pattern.Config "DragEventInit" {
             Required = []
             Optional = [
-                "dataTransfer", DataTransfer.Type
+                ("dataTransfer", DataTransfer.Type)
             ]
         }
 
