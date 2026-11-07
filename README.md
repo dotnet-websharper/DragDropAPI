@@ -18,6 +18,12 @@ enabling drag-and-drop functionality in WebSharper applications with typed acces
 
 ## Live demos
 
+**Try it live:** [Open the sample in your browser](https://dotnet-websharper.github.io/DragDropAPI/)
+
+![Drag and Drop API sample](docs/sample.png)
+
+The sample doubles as the binding's [test case](#running-the-sample): it drags an element onto a drop zone and shows the dropped state.
+
 - **GitHub Pages sample**: <https://dotnet-websharper.github.io/DragDropAPI/>
 - **Source repository**: <https://github.com/dotnet-websharper/DragDropAPI>
 - **WebSharper bindings**: <https://websharper.com/bindings>
