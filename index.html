@@ -37,9 +37,9 @@
 <body>
     <h1>Drag and Drop Example</h1>
     <div id="main" ws-children-template="Main">
-        <div ws-onafterrender="BoxInit">
-            <div id="dragBox" draggable="true">Drag Me</div>
-            <div id="dropZone">Drop Here</div>
+        <div>
+            <div id="dragBox" draggable="true" ws-attr="DragBoxAttrs">Drag Me</div>
+            <div id="dropZone" ws-attr="DropZoneAttrs" ws-hole="DropText">Drop Here</div>
         </div>
     </div>
     <script type="module" src="Content/WebSharper.DragDrop.Sample.min.js"></script>
