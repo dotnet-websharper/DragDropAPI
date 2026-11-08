@@ -1,0 +1,22 @@
+type file
+id WebSharper.DragDrop
+authors
+    IntelliFactory
+owners
+    IntelliFactory
+repositoryType git
+repositoryUrl https://github.com/dotnet-websharper/DragDropAPI/
+licenseUrl https://github.com/dotnet-websharper/DragDropAPI/blob/main/LICENSE.md
+iconUrl https://github.com/dotnet-websharper/core/raw/websharper50/tools/WebSharper.png
+projectUrl https://github.com/dotnet-websharper/DragDropAPI
+description
+    WebSharper bindings for DragDrop
+tags
+    Web JavaScript F# C#
+files
+    ../WebSharper.DragDrop.Extensions/bin/Release/netstandard2.0/WebSharper.DragDrop.Extensions.dll ==> lib/netstandard2.0
+    ../WebSharper.DragDrop.Extensions/bin/Release/netstandard2.0/WebSharper.DragDrop.Extensions.xml ==> lib/netstandard2.0
+    ../WebSharper.DragDrop/bin/Release/netstandard2.0/WebSharper.DragDrop.dll ==> lib/netstandard2.0
+    ../WebSharper.DragDrop/bin/Release/netstandard2.0/WebSharper.DragDrop.xml ==> lib/netstandard2.0
+dependencies
+        WebSharper ~> LOCKEDVERSION:[3]
